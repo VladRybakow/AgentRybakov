@@ -55,18 +55,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
+    <Compile Include="Windows\AgentAddWindow.xaml.cs">
+      <DependentUpon>AgentAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AgentInsertWindow.xaml.cs">
+      <DependentUpon>AgentInsertWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AgentRemoveWindow.xaml.cs">
+      <DependentUpon>AgentRemoveWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AgentWindow.xaml.cs">
+      <DependentUpon>AgentWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="Windows\AgentAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AgentInsertWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AgentRemoveWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AgentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

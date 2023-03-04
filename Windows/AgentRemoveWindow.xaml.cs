@@ -10,17 +10,13 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AgentSession1Rybakov
+namespace AgentSession1Rybakov.Windows
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public partial class AgentRemoveWindow : Window
     {
-        public MainWindow()
+        public AgentRemoveWindow()
         {
             InitializeComponent();
         }
