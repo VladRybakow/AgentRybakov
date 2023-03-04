@@ -4,9 +4,90 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AgentSession1Rybakov.Windows"
-        mc:Ignorable="d"
-        Title="AgentWindow" Height="450" Width="800">
+        mc:Ignorable="d" MinHeight="450" MinWidth="800"
+        Title="AgentWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="SearchTB" TextWrapping="Wrap"  TextChanged="SearchTB_TextChanged"  
+                 Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" />
+
+        <ComboBox x:Name="SortCB" SelectionChanged="SortCB_SelectionChanged" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Margin="5">
+            <TextBlock Text="по наименованию(возрастание)"/>
+            <TextBlock Text="по наименованию(убывание)"/>
+            <TextBlock Text="по размеру скидки(возрастание)"/>
+            <TextBlock Text="по размеру скидки(убывание)"/>
+        </ComboBox>
+
+        <ComboBox x:Name="FilterCB" SelectionChanged="FilterCB_SelectionChanged" Grid.Column="7" Grid.ColumnSpan="2" Grid.Row="1" Margin="5">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Background="White" x:Name="TypeProd_Name" Text="{Binding Title}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <ListView x:Name="AgentLst" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="8" Grid.RowSpan="6" Margin="0,-20,0,10">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" >
+
+                                <Image  Height="80" Width="80" Margin="15" x:Name="PictureI" Source="Res/logo.jpg"/>
+                            </StackPanel>
+                            <StackPanel >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Agent.AgentType.Title}" FontFamily="Century Gothic"/>
+                                    <Label Content="|"/>
+                                    <TextBlock Text="{Binding Agent.Title}" FontFamily="Century Gothic"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Product.ProductionPersonCount}" FontFamily="Century Gothic"  />
+                                    <Label Content="продаж за год" FontFamily="Century Gothic"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Agent.Phone}" FontFamily="Century Gothic"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Приоритетность:" FontFamily="Century Gothic" />
+                                    <TextBlock Margin="0,5,0,0" Text="{Binding Agent.Priority}" FontFamily="Century Gothic"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,-5,0,0">
+                                <TextBlock Margin="5" HorizontalAlignment="Right"  VerticalAlignment="Top" Text="{Binding Product.MinCostForAgent}" FontFamily="Century Gothic"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Content="Добавить" Grid.Column="8" Grid.Row="9" Margin="5" FontFamily="Century Gothic"/>
         
     </Grid>
 </Window>
