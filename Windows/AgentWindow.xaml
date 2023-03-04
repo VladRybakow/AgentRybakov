@@ -26,7 +26,7 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="*" />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -87,7 +87,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Content="Добавить" Grid.Column="8" Grid.Row="9" Margin="5" FontFamily="Century Gothic"/>
+        <Button Content="Добавить" Click="AddWindowOpen" Grid.Column="8" Grid.Row="9" Margin="5" FontFamily="Century Gothic"/>
         
     </Grid>
 </Window>

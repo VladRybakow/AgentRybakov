@@ -78,5 +78,12 @@ namespace AgentSession1Rybakov.Windows
 
             }
         }
+
+        private void AddWindowOpen(object sender, RoutedEventArgs e)
+        {
+            AgentAddWindow adw = new AgentAddWindow();
+            adw.Show();
+            this.Close();
+        }
     }
 }

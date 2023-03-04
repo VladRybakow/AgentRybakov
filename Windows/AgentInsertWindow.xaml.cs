@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgentSession1Rybakov.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace AgentSession1Rybakov.Windows
 {
     public partial class AgentInsertWindow : Window
     {
+        public static AgentsDBEntities dBEntities = new AgentsDBEntities();
         public AgentInsertWindow()
         {
             InitializeComponent();
