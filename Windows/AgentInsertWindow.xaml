@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AgentSession1Rybakov.Windows"
         mc:Ignorable="d"
         Title="AgentInsertWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#CEFFF9">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -32,6 +32,30 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
+
+        <Label Content="Наименование" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBox Background="#00CC76" x:Name="TitleTB" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,10"/>
+
+        <Label Content="Приоритет" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="PriorityTB" Background="#00CC76" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,0,10"/>
+
+        <Label Content="Телефон" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="PhoneTB" Grid.Column="1" Background="#00CC76" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,0,0,10"/>
+
+        <Label Content="Количество" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="CountTB" Background="#00CC76" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2" Margin="0,0,0,10"/>
+
+        <Label Content="Сумма" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="SumTB" Background="#00CC76" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,10"/>
+
+        <Label Content="Тип агента" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="AgentTypeTB" Background="#00CC76" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" Margin="10,0,10,10"/>
+
+        <Label Content="Номер" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="IdTB" Background="#00CC76" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2" Margin="10,0,10,10"/>
+
+        <Button Content="Редактировать" Background="#00CC76" x:Name="RedBtn" Click="RedBtn_Click" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="2" Margin="30,5,30,5"/>
+        <Button Content="Выйти" Background="#00CC76" x:Name="BackBtn" Click="BackBtn_Click" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="2" Margin="30,5,30,5"/>
 
     </Grid>
 </Window>

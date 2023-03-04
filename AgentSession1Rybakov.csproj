@@ -127,9 +127,6 @@
     <Compile Include="Windows\AgentInsertWindow.xaml.cs">
       <DependentUpon>AgentInsertWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\AgentRemoveWindow.xaml.cs">
-      <DependentUpon>AgentRemoveWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\AgentWindow.xaml.cs">
       <DependentUpon>AgentWindow.xaml</DependentUpon>
     </Compile>
@@ -142,10 +139,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AgentInsertWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\AgentRemoveWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

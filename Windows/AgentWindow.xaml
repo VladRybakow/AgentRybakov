@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AgentSession1Rybakov.Windows"
         mc:Ignorable="d" MinHeight="450" MinWidth="800"
         Title="AgentWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="#CEFFF9">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -23,7 +23,7 @@
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="*" />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition Height="*" />
@@ -34,7 +34,7 @@
         </Grid.RowDefinitions>
 
         <TextBox x:Name="SearchTB" TextWrapping="Wrap"  TextChanged="SearchTB_TextChanged"  
-                 Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" />
+                 Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" Background="#00CC76" />
 
         <ComboBox x:Name="SortCB" SelectionChanged="SortCB_SelectionChanged" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="1" Margin="5">
             <TextBlock Text="по наименованию(возрастание)"/>
@@ -51,7 +51,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <ListView x:Name="AgentLst" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="8" Grid.RowSpan="6" Margin="0,-20,0,10">
+        <ListView x:Name="AgentLst" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="8" Grid.RowSpan="6" Margin="0,-20,0,10" MouseDoubleClick="AgentInsertWindowOpen">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Black" BorderThickness="1">
@@ -87,7 +87,8 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Content="Добавить" Click="AddWindowOpen" Grid.Column="8" Grid.Row="9" Margin="5" FontFamily="Century Gothic"/>
+        <Button Background="#00CC76" Content="Удалить" Click="DelBtn_Click" Grid.Column="7" Grid.Row="9" Margin="5" FontFamily="Century Gothic"/>
+        <Button Content="Добавить" Background="#00CC76" Click="AddWindowOpen" Grid.Column="8" Grid.Row="9" Margin="5" FontFamily="Century Gothic"/>
         
     </Grid>
 </Window>

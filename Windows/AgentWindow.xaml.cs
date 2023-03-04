@@ -78,11 +78,43 @@ namespace AgentSession1Rybakov.Windows
 
             }
         }
+        private void DelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var q = AgentLst.SelectedItem as ProductSale;
+            if (q == null)
+            {
+                MessageBox.Show("Выберите объект для удаления");
+                return;
+            }
+            MessageBoxResult result = MessageBox.Show("Вы действительно хотите удалить строку?", "Удалить?", MessageBoxButton.YesNo);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    dBEntities.ProductSale.Remove(q);
+                    AgentLst.ItemsSource = dBEntities.ProductSale.ToList();
+                    dBEntities.SaveChanges();
+                }
+                catch
+                {
+                    MessageBox.Show("Ошибка!");
+                }
+            }
+        }
 
         private void AddWindowOpen(object sender, RoutedEventArgs e)
         {
             AgentAddWindow adw = new AgentAddWindow();
             adw.Show();
+            this.Close();
+        }
+
+        private void AgentInsertWindowOpen(object sender, MouseButtonEventArgs e)
+        {
+            var ag = AgentLst.SelectedItem as ProductSale;
+            AgentInsertWindow aiw = new AgentInsertWindow(ag);
+            aiw.Show();
             this.Close();
         }
     }
